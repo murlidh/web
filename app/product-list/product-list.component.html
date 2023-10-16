@@ -1,0 +1,26 @@
+<div class="flex justify-content-between">
+  <h2>Products</h2>
+  <p-button label="Add Product" (click)="showModel()"></p-button>
+</div>
+<p-table [value]="products" [tableStyle]="{ 'min-width': '50rem'}" [paginator]="true" [rows]="2">
+  <ng-template pTemplate="header">
+      <tr>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Image</th>
+          <th>Rating</th>
+
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-product>
+      <tr>
+          <td>{{ product.title }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{product.description}}</td>
+          <td>{{ product.category }}</td>
+          <td><img src="{{product.image}}" height="80px"></td>
+      </tr>
+  </ng-template>
+</p-table>
